@@ -2,7 +2,7 @@
     "name": "yugniro/geotiff-canvas",
     "type": "library",
     "keywords": ["canvas", "openlayer", "javascript", "geotiff", "tiff"],
-    "homepage": "https://yugniro.github.io/geotiff-canvas/"
+    "homepage": "https://yugniro.github.io/geotiff-canvas/",
     "authors": [
         {
           "name": "Mihail Pyatinskiy",
