@@ -10,6 +10,14 @@ Geotiff-canvas - openlayer4 library for real-time draw .tif (.tiff) images from 
 ### Requirement
  - [OpenLayers4](https://openlayers.org/)
 
+### Installation
+
+composer
+```bash
+composer require yugniro/geotiff-canvas
+```
+
+
 ### Use example
 
 The first you should import libraries in header:
@@ -20,6 +28,7 @@ The first you should import libraries in header:
 ```
 
 and then after ```map``` openlayer object is initialized you should make:
+
 ```javascript
 var layer = new GeoCanvas(map, 'binary/kriging-interpolation-qgis.tif', {
     opacity: 0.7
@@ -30,16 +39,19 @@ layer.init();
 If you looking for working example look at ```example.html```.
 
 ### Browser support
+
   - Chrome >= 50
   - Firefox
   - IE >= 11
   - Edge >= 40
   - Safari >= 11
  
- ### Author
- Pyatinskiy Mihail, 2018.
- 
- ### License
+### Author
+
+Pyatinskiy Mihail, 2018.
+
+### License
+
 MIT License
 
 Copyright (c) 2018 YugNIRO
