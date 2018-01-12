@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>GeoTiff on OpenLayer4</title>
+	<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8" />
+    <!-- use global openlayer library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/openlayers@4.6.4/dist/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/openlayers@4.6.4/dist/ol.js"></script>
+
+    <!-- .tif (geotiff) format parser -->
+    <script src="dist/js/geotiff-format-parser.min.js"></script>
+    <!-- openlayer canvas layer builder -->
+	<script src="dist/js/openlayer4-geotiff.min.js"></script>
+
+    <!-- some custom styles for demo page -->
+    <style>
+        .row {display: flex;}
+        .col-map {flex: 1;}
+        .col-legend{width: 35%;margin-left: 10px;}
+    </style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-map">
+        <!-- main map element -->
+        <div id="map"></div>
+    </div>
+    <!-- legend info -->
+    <div class="col-legend">
+        <h1>GeoTiff to OpenLayer4</h1>
+        <hr />
+        <p>Geotiff-canvas - openlayer4 library for real-time draw .tif (.tiff) images from qgis/arcgis/etc raster layer export on web map.</p>
+        <p>If you want draw .tif on openlayer map you should add imports:</p>
+        <pre>&lt;script src="js/geotiff-format-parser.js"&gt;&lt;/script&gt;
+&lt;script src="js/openlayer4-geotiff.js"&gt;&lt;/script&gt;</pre>
+        <p>and <strong>after</strong> map initialization <code>var map = new ol.Map({})</code> make:</p>
+        <pre>var layer = new GeoCanvas(map, 'prediction-raster.tif', {
+    opacity: 0.7
+});
+layer.init();</pre>
+        <p>and you well see results on your map! Enjoy!</p>
+        <p>Rework by: <a href="mailto:zenn1989@gmail.com">Pyatinskiy Mihail</a> &copy; 2018</p>
+    </div>
+</div>
+
+<script>
+    // draw openlayer object on #map
+    var map = new ol.Map({
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        target: 'map',
+        view: new ol.View({
+            center: ol.proj.fromLonLat([37, 46]),
+            zoom: 7
+        })
+    });
+
+    // initialize geotiff canvas builder
+    var layer = new GeoCanvas(map, 'binary/kriging-interpolation-qgis.tif', {
+        opacity: 0.7
+    });
+    // draw canvas layer on map
+    layer.init();
+</script>
+</body>
+</html>
