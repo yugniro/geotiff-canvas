@@ -1,0 +1,14 @@
+{
+    "name": "yugniro/geotiff-canvas",
+    "type": "library",
+    "keywords": ["canvas", "openlayer", "javascript", "geotiff", "tiff"],
+    "homepage": "https://yugniro.github.io/geotiff-canvas/"
+    "authors": [
+        {
+          "name": "Mihail Pyatinskiy",
+          "email": "zenn1989@gmail.com",
+          "homepage": "http://ffcms.ru",
+          "role": "Maintainer"
+        }
+    ]
+}
