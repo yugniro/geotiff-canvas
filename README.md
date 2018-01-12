@@ -2,6 +2,8 @@
 
 Geotiff-canvas - openlayer4 library for real-time draw .tif (.tiff) images from qgis/arcgis/etc raster layer export on web map. Library parse geotiff image binary and add canvas layer on map in real time.
 
+![Alt text](demo.png?raw=true "Example image")
+
 ### Live demo
 [Open Web Demo](https://yugniro.github.io/geotiff-canvas/example.html)
 
